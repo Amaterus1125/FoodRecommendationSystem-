@@ -77,6 +77,11 @@ def generate_plan(request: PlanRequest):
         }
     }
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Nutrition Planner API. Go to /docs to test the endpoints."}
+
+
 @app.get("/health")
 def health_check():
     return {"status": "active", "message": "API is running."}
