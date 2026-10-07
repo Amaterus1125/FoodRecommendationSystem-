@@ -45,7 +45,7 @@ st.sidebar.header("2. Engine Settings")
 protein_level = st.sidebar.selectbox("Protein Target Level", ["minimum", "optimum", "maximum"], index=1)
 split_meals = st.sidebar.checkbox("Split into Meals (B/L/S/D)", value=True)
 include_supplements = st.sidebar.checkbox("Include Supplements (e.g. Whey)", value=False)
-backend_url = st.sidebar.text_input("Backend API Endpoint", "http://localhost:8000/api/plan")
+backend_url = st.sidebar.text_input("Backend API Endpoint", "https://foodrecommendationsystem-f2vl.onrender.com/api/plan")
 
 # ---------------- HELPER: Build Sheet JSON ----------------
 def build_sheet_payload():
