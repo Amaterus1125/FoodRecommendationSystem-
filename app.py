@@ -13,10 +13,10 @@ app = FastAPI(
     description="Backend API for generating daily and meal-specific nutrition plans."
 )
 
-# Enable CORS to allow any frontend to connect
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with your frontend URL (e.g., "http://localhost:3000")
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -35,7 +35,7 @@ def generate_plan(request: PlanRequest):
     Generate a nutrition plan based on the user's sheet.json data.
     """
     try:
-        # 1. Parse the incoming JSON sheet into the internal engine format
+
         sheet = sheet_to_engine(request.sheet, request.protein_level)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid sheet data: {str(e)}")
